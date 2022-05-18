@@ -83,10 +83,12 @@ In other words, a public key locks up data from unauthorised use, while a privat
 > 4. Submit both my public and private keys, as both will be needed for me to log in
 > 5. Generate a new SSH key pair in a different directory
 >
+> > ## Solution
 > >
 > > 1. No. Your private key should stay on your computer and not be shared with anyone
 > > 2. Yes. The systems team or framework will be able to add your ssh key to your account
 > > 3. No, the helpdesk team will still need your public key for you to gain access to the system
+> {: .solution}
 {: .challenge}
 
 
@@ -110,6 +112,7 @@ which have different levels of encryption. Here we will be creating a key with
 > 2. You can then accept the default filename and location for your key-pair, by pressing either `Enter` or `Return`
 > 3. Enter a password which you can remember (or alternatively leave it blank), and again press `Enter` or `Return`.
 >    In addition to a course or project account, you will need to enter this password every time you log in.
+> 
 {: .challenge}
 
 ## How can I log into a supercomputer
@@ -127,7 +130,8 @@ or the domain name (gmail, yahoo, institution)
 > Now using the course account given to you, try and log in by adapting the command above. You will need the password
 > that you generated whilst creating your SSH key.
 >
-> > 
+> > ## Solution
+> >
 > > You should have got an error saying `Permission denied (publickey)`. 
 > > 
 > > This occurs when your public key has not been added to your account, and is a very common problem that users can
@@ -137,7 +141,8 @@ or the domain name (gmail, yahoo, institution)
 > >
 > > To gain access, you will need to send your public SSH key either as a ticket to systems, or in this lesson, via a 
 > > webform which will be posted to you in the chat.
->
+> >
+> {: .solution}
 {: .challenge}
 
 If you are joining us for our intro-to-hpc course, you will be granted access to Kay and have some time to work on some
@@ -148,9 +153,9 @@ For now however we can inform you of the next steps.
 Once your SSH key has been added, the error message you have experienced will be replaced by a block of text similar to
 below. 
 
-```
+```bash
 The authenticity of host 'sample.ssh.com' cannot be established.
- DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:bb:98:76:54:32:10.
+ DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:ba:98:76:54:32:10.
  Are you sure you want to continue connecting (yes/no)?
 ```
 
