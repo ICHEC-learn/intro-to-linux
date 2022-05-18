@@ -63,6 +63,23 @@ Both Windows and Mac have their own command line interfaces like Linux, namely C
 (Mac), with Terminal being much more effective. The OS is GUI based, with these extra applciations added on for 
 developers. Linux however, is primarily command line based, with versions having GUI support (Ubuntu, Redhat, etc)
 
+> ## Starting a terminal
+>
+> Mac and Linux users have life easy, the Terminal application has all the UNIX commands you will ever need. Windows
+> users do not have things as easy, as the Command Prompt app does not support any UNIX commands.
+>
+> There are two commonly used Linux terminal emulators, MobaXterm and Git Bash.
+>
+> If you have already installed [MobaXterm (Portable Edition)](https://mobaxterm.mobatek.net/download-home-edition.html)
+> and are used to the setup, feel free to continue using it.
+>
+> If you do not yet have a terminal emulator, or find MobaXterm confusing, then we recommend you to install 
+> [Git Bash](https://git-scm.com/download/win).
+>
+> Take a minute to set install or start your terminal emulator. It can continue in the background as we continue
+>
+{: .challenge}
+
 ## The Shell
 
 The shell is a program where users can type commands.
@@ -93,17 +110,9 @@ We can build on the command-line skills covered here
 to tackle a wide range of scientific questions and computational challenges.
 
 When the shell is first opened, you are presented with a **prompt**,
-indicating that the shell is waiting for input.
+indicating that the shell is waiting for input. This can depend on the type of shell, but is typically `$` or `%`.
 
-~~~
-$
-~~~
-{: .language-bash}
-
-The shell typically uses `$ ` as the prompt, but may use a different symbol.
-In the examples for this lesson, we'll show the prompt as `$ `.
-Most importantly:
-when typing commands, either from these lessons or from other sources,
+Most importantly, when typing commands, either from these lessons or from other sources,
 *do not type the prompt*, only the commands that follow it.
 Also note that after you type a command, you have to press the <kbd>Enter</kbd> key to execute it.
 
@@ -126,8 +135,8 @@ Documents   Library     Music       Public
 {: .output}
 
 > ## Command not found
-> If the shell can't find a program whose name is the command you typed, it
-> will print an error message such as:
+>
+> If the shell can't find a program whose name is the command you typed, it will print an error message such as:
 >
 > ~~~
 > $ ks
@@ -142,24 +151,15 @@ Documents   Library     Music       Public
 {: .callout}
 
 
-
 > ## Anatomy of a command
 > 
 > Some commands need additional options to work, these can be in the form of flags (denoted as `-` for short options
 > or `--` as long options), or arguments that are passed to the command
 > 
 >
+{: .callout}
 
 The next few episodes will look more in detail on how to use commands to navigate around but first we need to briefly 
 refer to the secure shell.
-
-## SSH - Secure Shell
-
-The command `ssh` known as secure shell follows an admin protocol that authenticates a remote user. To log into 
-{{ site.remote.name }}, you will need to do so via `ssh`. You will need an ssh-key in which to do so. For more
-information on ssh-keys, you can refer to the ICHEC [documentation](setting-up-ssh-keys) or check out our ichec-learn
-repository on [intro-to-hpc](https://ichec-learn.github.io/intro-to-hpc/).
-
-[setting-up-ssh-keys]: https://www.ichec.ie/academic/national-hpc/documentation/tutorials/setting-ssh-keys
 
 {% include links.md %}
