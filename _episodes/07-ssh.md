@@ -155,7 +155,7 @@ below.
 
 ```bash
 The authenticity of host 'sample.ssh.com' cannot be established.
- DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:ba:98:76:54:32:10.
+ DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:bb:98:76:54:32:10.
  Are you sure you want to continue connecting (yes/no)?
 ```
 
