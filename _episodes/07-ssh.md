@@ -11,11 +11,11 @@ questions:
 - "How do I log into a supercomputer?"
 objectives:
 - "Introduce the concepts of ssh keys and why they are needed"
-- "Generate an ssh keypair for different operating systems"
+- "Generate an ssh key-pair for different operating systems"
 keypoints:
-- "ssh keypairs are needed to log into most supercomputing systems"
-- "To log into ICHEC's cluster, an ssh keypair is necessary"
-- "You only need one ssh keypair generated per device"
+- "ssh key-pairs are needed to log into most supercomputing systems"
+- "To log into ICHEC's cluster, an ssh key-pair is necessary"
+- "You only need one ssh key-pair generated per device"
 - "ssh keys are typically stored in the user's home directory"
 ---
 
@@ -52,7 +52,7 @@ SSH keys work in exactly the same way, except you have to generate the keys your
 person simply give you a key card. In the same way that the ID card authenticates your identity, the SSH key 
 authenticates the identity of your computer.
 
-When you generate an SSH key, you end up creating what is known as an SSH keypair. It creates two different ones, one
+When you generate an SSH key, you end up creating what is known as an SSH key-pair. It creates two different ones, one
 being a public key, the other is a private key. 
 
 We will come onto generating SSH keys later, 
@@ -62,7 +62,7 @@ We will come onto generating SSH keys later,
 
 ## Public and Private keys
 
-When you set up an SSH key, you generate a "keypair", a **public** and **private** key. 
+When you set up an SSH key, you generate a "key-pair", a **public** and **private** key. 
 
 The public key, in cryptographic terms is a large numerical value that is used to encrypt data. Most people don't need 
 to worry about it, however it is important to know what is looks like when printed to the screen. Public keys will have 
@@ -73,7 +73,7 @@ These are used to decrypt messages that were created with the corresponding publ
 
 In other words, a public key locks up data from unauthorised use, while a private key is used to unlock it.
 
-> ## Create your own SSH keypair
+> ## Create your own SSH key-pair
 >
 > What do you need to do once you have created an SSH key pair, and you want to have access to a supercomputer
 > 
@@ -90,31 +90,31 @@ In other words, a public key locks up data from unauthorised use, while a privat
 {: .challenge}
 
 
-## Generating an SSH keypair
+## Generating an SSH key-pair
 
-The process of setting up an SSH keypair is relatively simple on Mac and Linux operating systems, but is not as simple 
+The process of setting up an SSH key-pair is relatively simple on Mac and Linux operating systems, but is not as simple 
 on Windows. Depending on your terminal emulator, it can put your SSH key in odd places.
 
-SSH keys typically have a location in a hidden folder in your home directory. Until you create an SSH keypair for the
+SSH keys typically have a location in a hidden folder in your home directory. Until you create an SSH key-pair for the
 first time this directory, `.ssh` will not exist.
 
 There are many different SSH key types, depending on the algorithm use to generate it. This includes `rsa`, `ed25519`, 
 which have different levels of encryption. Here we will be creating a key with 
 
-> ## Create your own SSH keypair
+> ## Create your own SSH key-pair
 >
 > 1. Navigate to your home directory and execute the following command.
 >
 > `ssh-keygen -t ed25519`
 > 
-> 2. You can then accept the default filename and location for your keypair, by pressing either `Enter` or `Return`
+> 2. You can then accept the default filename and location for your key-pair, by pressing either `Enter` or `Return`
 > 3. Enter a password which you can remember (or alternatively leave it blank), and again press `Enter` or `Return`.
 >    In addition to a course or project account, you will need to enter this password every time you log in.
 {: .challenge}
 
 ## How can I log into a supercomputer
 
-By now we have created an SSH keypair, let's try and log in using the command;
+By now we have created an SSH key-pair, let's try and log in using the command;
 
 `ssh USERNAME@machine.example.com`
 
@@ -150,7 +150,7 @@ below.
 
 ```
 The authenticity of host 'sample.ssh.com' cannot be established.
- DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:ba:98:76:54:32:10.
+ DSA key fingerprint is 01:23:45:67:89:ab:cd:ef:ff:fe:dc:bb:98:76:54:32:10.
  Are you sure you want to continue connecting (yes/no)?
 ```
 
