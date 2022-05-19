@@ -15,8 +15,9 @@ keypoints:
 - "On Linux systems, like supercomputers, everything is done on the command line."
 - "Many commands need options (flags) beginning with a `-` to be utilised effecitvely"
 - "Many commands need additional arguments to be passed into them to perform"
+- "The root directory is specified by the root directory, referred to as `/`."
+- "Directory names in a path are separated with `/` on Unix and Mac, but by `\\` on Windows."
 - "Whitespace matters. Every space makes a difference, so be careful what you are typing."
-- "The `man` command will return usage and flags of any command you specify"
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>
@@ -137,7 +138,7 @@ you move from folder to folder. In Linux you need to specify it.
 
 Most commands have additional options to make them more specific, and these are known as **flags**. Flags are accessed
 by using `-` for a single letter flag or `--` for longer options. Below is an example of a command with both short and
-long option flags
+long option flags.
 
 ~~~
 courseXX@login2:~$ ls -l --all
@@ -146,6 +147,9 @@ courseXX@login2:~$ ls -l --all
 
 Here, the `-l` gives a full list of the properties of a directory that you are in, and the `--all` shows hidden files. 
 Hidden files themselves are important, and we will come back to them later.
+
+You may also notice that there are spaces between each flag and command, this is because whitespace is essential in
+Linux. Without whitespace, the shell does not know what you are doing and will throw an error.
 
 Some commands however cannot work by themselves and flags alone. What if you wanted to copy a file from one place to
 another? Additional arguments are needed. With our `ls` command, we can also introduce an argument as well as all the
@@ -195,6 +199,7 @@ exactly correct it will raise an error.
 > 8. `ls -l all`
 > 9. `prog/ ls`
 > 10. `ls -l --all prog/`
+> 11. `ls -l--all prog/`
 >
 > > ## Solution
 > >
@@ -209,6 +214,7 @@ exactly correct it will raise an error.
 > >    flag.
 > > 9. No, the command comes before the argument.
 > > 10. Yes, this vertically lists all the files (+ hidden ones) in `prog/`.
+> > 11. No, there is no whitespace between `-l` and `--all`
 > {: .solution}
 {: .challenge}
 
