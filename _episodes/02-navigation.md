@@ -18,15 +18,15 @@ objectives:
 keypoints:
 - "Information is stored in files, which are stored in directories. A directory is itself a file which contains 
   references to other files."
-- "`..` means 'the directory above the current one' in the directory tree, whereas `.` on its own specifies 
-  'the current directory'."
 - "The `pwd` command will always show where you are at any time."
 - "The `ls` command lists the contents of the present working directory. Additional options and arguments can filter 
   this list further."
+- "The `man` command will return usage and flags of any command you specify"
+- "`..` means 'the directory above the current one' in the directory tree, whereas `.` on its own specifies 
+  'the current directory'."
 - "The `cd` command allows you to navigate through directories, but you also need to direct it to where you want to go
   using `cd [path]`."
-- "The root directory is specified by the root directory, referred to as `/`."
-- "Directory names in a path are separated with `/` on Unix and Mac, but by `\\` on Windows."
+- "Use `history` to display recent commands, and `![number]` to repeat a command by number."
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>
@@ -106,5 +106,26 @@ that later, let's look into our first few exercises.
 {: .challenge}
 
 ## Navigating around
+
+Before we dive into the most commonly used commands for navigation, we
+
+> ## The `touch` command
+>
+> This command is not for navigation purposes, but will be useful for generating empty files for us to help with 
+> navigation.
+> 
+> By typing `touch AAA`, we create an empty file called `AAA`. Here, `touch` is the command and `AAA` is the argument
+> we pass to it.
+{: .callout}
+
+### The `pwd` command
+
+### The `ls` command
+
+### The `cd` command
+
+## Getting help
+
+`history` `man` `<command> --help`
 
 {% include links.md %}
