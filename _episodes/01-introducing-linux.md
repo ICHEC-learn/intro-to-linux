@@ -126,10 +126,10 @@ The shell then requires information on what it needs to work on, in the same way
 or a keyboard won't type out words. The command line needs input to work. These inputs are called *commands*. 
 A very simple command can be as shown below.
 
-```
+~~~
 courseXX@login2:~$ ls
-```
-{: .bash}
+~~~
+{: .input}
 
 All the information to the left of the `$` is the prompt, and we are entering the command `ls`, which is short for
 list. It lists out the contents of the directory that you are in. For Windows and Mac, this is shown automatically, as
@@ -139,10 +139,10 @@ Most commands have additional options to make them more specific, and these are 
 by using `-` for a single letter flag or `--` for longer options. Below is an example of a command with both short and
 long option flags
 
-```
+~~~
 courseXX@login2:~$ ls -l --all
-```
-{: .bash}
+~~~
+{: .input}
 
 Here, the `-l` gives a full list of the properties of a directory that you are in, and the `--all` shows hidden files. 
 Hidden files themselves are important, and we will come back to them later.
@@ -151,10 +151,10 @@ Some commands however cannot work by themselves and flags alone. What if you wan
 another? Additional arguments are needed. With our `ls` command, we can also introduce an argument as well as all the
 flags
 
-```
+~~~
 courseXX@login2:~$ ls -l --all test/
-```
-{: .bash}
+~~~
+{: .input}
 
 Here the argument we are passing is `test/`, which is a directory
 
