@@ -195,7 +195,7 @@ exactly correct it will raise an error.
 > 8. `ls -l all`
 > 9. `prog/ ls`
 > 10. `ls -l --all prog/`
-> > 
+>
 > > ## Solution
 > >
 > > 1. No, `la` doesn't exist despite `-s` being a valid flag.
