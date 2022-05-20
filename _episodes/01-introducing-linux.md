@@ -130,7 +130,7 @@ A very simple command can be as shown below.
 ~~~
 courseXX@login2:~$ ls
 ~~~
-{: .output}
+{: .language-bash}
 
 All the information to the left of the `$` is the prompt, and we are entering the command `ls`, which is short for
 list. It lists out the contents of the directory that you are in. For Windows and Mac, this is shown automatically, as
@@ -143,7 +143,7 @@ long option flags.
 ~~~
 courseXX@login2:~$ ls -l --all
 ~~~
-{: .output}
+{: .language-bash}
 
 Here, the `-l` gives a full list of the properties of a directory that you are in, and the `--all` shows hidden files. 
 Hidden files themselves are important, and we will come back to them later.
@@ -158,7 +158,7 @@ flags
 ~~~
 courseXX@login2:~$ ls -l --all test/
 ~~~
-{: .output}
+{: .language-bash}
 
 Here the argument we are passing is `test/`, which is a directory
 
