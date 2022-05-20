@@ -107,20 +107,111 @@ that later, let's look into our first few exercises.
 
 ## Navigating around
 
-Before we dive into the most commonly used commands for navigation, we
+Before we dive into the most commonly used commands for navigation, we should look at a command which creates some
+empty files we can play around with.
 
 > ## The `touch` command
 >
 > This command is not for navigation purposes, but will be useful for generating empty files for us to help with 
 > navigation.
 > 
-> By typing `touch AAA`, we create an empty file called `AAA`. Here, `touch` is the command and `AAA` is the argument
-> we pass to it.
+> By typing `touch ABC`, we create an empty file called `ABC`. Here, `touch` is the command and `ABC` is the argument
+> we pass to it. 
+>
+> Be careful with whitespace, as if you type `touch A B C`, it will create 3 files, `A`, `B` and `C`. This is why using
+> underscores (`_`) or hyphens (`-`) is often considered best practice.
+>
+> The command `touch A_B_C` will therefore create a single file `A_B_C`.
+>
 {: .callout}
+
+> ## Create an empty file
+>
+> Create a **single** file with a name of your choice. If it has multiple words, separate them with `_` or `-`
+> 
+{: .challenge}
 
 ### The `pwd` command
 
+One of the most important things to know in Linux at any point is where you actually are. This, thankfully is easy to
+do in Linux by running a command called `pwd` (which stands for 'print working directory'). Remember that directories
+are like *places* - at any time while we are using the shell we are in exactly one place, called our 
+**current working directory**. Directories in Linux are the same as folders. Commands mostly read and write files in
+the current working directory, i.e. 'here', so knowing where you are before running a command is important. `pwd` shows 
+you where you are:
+
+~~~
+$ pwd
+~~~
+{: .language-bash}
+
+Your output will depend on where you are. As you are starting out, you are likely going to be placed where your shell
+considers as "home". You may have something like this.
+
+~~~
+/Users/johnsmith
+~~~
+{: .language-bash}
+
+As you get more used to UNIX commands, you will find that you need this command less and less, but for the moment, 
+practice using it whenever you are at any point unsure where you are.
+
+> ## Home Directory Variation
+>
+> The home directory path will look different on different operating systems. On Linux it may look like
+> `/home/johnsmith`, and on Windows it will be similar to `C:\Documents and Settings\johnsmith` or 
+> `C:\Users\johnsmith` (Note that it may look slightly different for different versions of Windows.). In future 
+> examples, we've used Mac output as the default - Linux and Windows output may differ slightly but should be generally
+> similar.
+>
+>  
+> We will also assume that your `pwd` command returns your users home directory. If `pwd` returns something different
+> you may need to navigate there using `cd` or some commands in this lesson will not work as written. See
+> [The `cd` command](#the-cd-command) for more details on the `cd` command.
+{: .callout}
+
 ### The `ls` command
+
+We saw this command before in the [previous episode](01-introducing-linux.md), but now lets go into more details. This
+is one of the most commonly used commands you will get to use.
+
+`ls` prints the names of the files and directories in the current directory as we saw previously, but we can make its 
+output more comprehensible by using the `-F` **option** which tells `ls` to classify the output by adding a marker to
+file and directory names to indicate what they are:
+- a trailing `/` indicates that this is a directory
+- those with an extension `.docx`, `.c` or sometimes no extension are regular files
+
+Depending on your default options, the shell might also use colours to indicate whether each entry is a file or
+directory, or an executable.
+
+~~~
+$ ls -F
+~~~
+{: .language-bash}
+
+~~~
+Applications/ Documents/    Library/      Music/        Public/
+Desktop/      Downloads/    Movies/       Pictures/
+~~~
+{: .output}
+
+Let us now use the `-a` flag as before, which shows **all** the files in a directory. Now, execute the command below;
+
+~~~
+$ ls -aF
+~~~
+{: .language-bash}
+
+You may have noticed a big change, with items that may look something like this; 
+
+~~~
+./            ../           .anaconda/    .bash_history/ .ssh/
+Applications/ Documents/    Library/      Music/         Public/
+Desktop/      Downloads/    Movies/       Pictures/
+~~~
+{: .output}
+
+You can see that 
 
 ### The `cd` command
 
