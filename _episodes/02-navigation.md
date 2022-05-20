@@ -211,12 +211,221 @@ Desktop/      Downloads/    Movies/       Pictures/
 ~~~
 {: .output}
 
-You can see that 
+You can see that some new options have appeared with a `.` beforehand. These are hidden files or directories which do
+not appear in normal view. The single `.` refers to the directory you are currently in. `..` on the other hand refers
+to the directory above the one that you are in. We will look more into details about this as we look into moving around
+directories.
+
+Let's say we want to list all the directories that start with the letter D, we can use a handy key called `Tab` which
+lists out a bunch of options.
+
+~~~
+$ ls D
+~~~
+{: .language-bash}
+
+~~~
+Documents/    Desktop/      Downloads/
+~~~
+{: .output}
+
+`Tab` can also help autocomplete. Typing the following followed by pressing `Tab` will autocomplete the word `Desktop`
+
+~~~
+$ ls De
+~~~
+{: .language-bash}
+
+~~~
+Desktop/
+~~~
+{: .output}
 
 ### The `cd` command
 
+We next move onto the command that you will use most often, `cd` which stands for 'change directory'. This command is
+akin to double clicking a folder in a graphical interface to get into a folder.
+
+But `cd` alone isn't enough, we need to follow it with a directory name to change our working directory.
+
+Let's say we want to move into our Desktop directory. Using our trick from above with the `Tab` key will ensure that 
+the directory exists, and will autocomplete.
+
+~~~
+$ cd Desktop
+$ pwd
+~~~
+{: .language-bash}
+
+~~~
+/Users/johnsmith/Desktop
+~~~
+{: .output}
+
+Note how the present working directory has changed from when we initially used the [`pwd` command](#the-pwd-command). 
+We recommend to use this everytime you change directory, like leaving breadcrumbs in the famous Hansel and Gretel
+story.
+
+Now let's say we want to go back to where we were. We can do two things. The first is type `cd` by itself, but this
+will always put us back in the home directory, regardless of where we call it. It is a handy feature, but can cause you
+to get lost quickly! The more commonly used way is by referencing our "upper directory" which we covered above.
+
+~~~
+$ cd ..
+$ pwd
+~~~
+{: .language-bash}
+
+~~~
+/Users/johnsmith
+~~~
+{: .output}
+
+Using this we are back in the directory above where we are
+
+> ## Whitespace matters
+>
+> For all Linux commands, whitespace is of paramount importance when feeding arguments into a command. Commands like
+> `ls-l`, and `cd..` will not work, and you will get an error saying;
+> 
+> ~~~
+> command not found
+> ~~~
+> {: .output}
+>
+> This error signifies a typo which needs correcting
+{: .callout}
+
+> ## Practice using `cd`
+>
+> Experiment with the cd command and see what happens when you try and use cd along with the following arguments. Don't
+> forget to use `pwd` to tell you where you are at any time.
+>
+> 1. `..`
+> 2. Nothing
+> 3. `.`
+> 4. `new`
+> 5. `../../`
+> 6. `~`
+{: .challenge}
+
+In the next episode, we will create a number of directories and then practice the `cd` command with a file structure
+that we created ourselves.
+
+> ## What works with `cd`?
+>
+> Match up the situations below with their expected output. Assume that you are in a directory which contains a single
+> directory, `Documents`.
+> 
+> | Command        | Outcome                                  |
+> |----------------|------------------------------------------|
+> | `cd`           | Moves back one directory                 |
+> | `cd.`          | `No such file or directory`              |
+> | `cd Desktop`   | Moves you back two directories           |
+> | `cd ../..`     | Moves you back into the "home" directory |
+> | `cd ..`        | Does nothing, as you are already here    |
+> | `cd Documents` |`command not found`                       |
+> | `cd ~`         | Moves you back into the "home" directory |
+> | `cd .`         | Moves you into `Desktop`                 |
+> 
+> > ## Solution
+> >
+> > | Command        | Outcome                                  |
+> > |----------------|------------------------------------------|
+> > | `cd`           | Moves you back into the "home" directory |
+> > | `cd.`          |  `command not found`                     |
+> > | `cd Desktop`   | Moves you into `Desktop`                 |
+> > | `cd ../..`     | Moves you back two directories           |
+> > | `cd ..`        | Moves back one directory                 |
+> > | `cd Documents` | `No such file or directory`              |
+> > | `cd ~`         | Moves you back into the "home" directory |
+> > | `cd .`         | Does nothing, as you are already here    |
+> >
+> {: .solution}
+{: .challenge}
+
 ## Getting help
 
-`history` `man` `<command> --help`
+There are a couple of ways of getting help in Linux for a command, lets take `ls` as an example
+
+1. We can pass a `--help` option to the command, such as:
+    ~~~
+    $ ls --help
+    ~~~
+    {: .language-bash}
+
+2. We can read its manual with `man`, such as:
+    ~~~
+    $ man ls
+    ~~~
+    {: .language-bash}
+
+Depending on your environment you might find that only one of these works (either `man` or `--help`, e.g., `man` works
+for macOS and `--help` typically works for Git Bash).
+
+We'll describe both ways below.
+
+### The `--help` option
+
+Many bash commands, and programs that people have written that can be
+run from within bash, support a `--help` option to display more
+information on how to use the command or program.
+
+~~~
+$ ls --help
+~~~
+{: .language-bash}
+
+#### The `man` command
+
+The other way to learn about `ls` is to type
+~~~
+$ man ls
+~~~
+{: .language-bash}
+
+The command `man` is short for manual. This will turn your terminal into a page with a description
+of the `ls` command and its options.
+
+To navigate through the `man` pages, you may use `↑` and `↓` to move line-by-line,
+or try `B` and `Spacebar` to skip up and down by a full page. To search for a character or word in the `man` pages,
+use `/` followed by the character or word you are searching for. Sometimes a search will result in multiple hits. If
+so, you can move between hits using `N` (for moving forward) and `Shift + N` (for moving backward).
+
+To **quit** the `man` pages, press `Q`.
+
+> ## Manual pages on the web
+>
+> Of course there is a third way to access help for commands:
+> searching the internet via your web browser.
+> When using internet search, including the phrase `unix man page` in your search
+> query will help to find relevant results.
+>
+> GNU provides links to its
+> [manuals](http://www.gnu.org/manual/manual.html) including the
+> [core GNU utilities](http://www.gnu.org/software/coreutils/manual/coreutils.html),
+> which covers many commands introduced within this lesson.
+{: .callout}
+
+### The `history` command
+
+Although not a command for getting help, it is very helpful when typing lots of commands, as one can easily forget what
+commands you have typed.
+
+~~~
+$ history
+~~~
+{: .language-bash}
+
+~~~
+1 pwd
+2 ls
+3 ls -F
+...
+~~~
+{: .output}
+
+The shell stores up to the last 1000 commands, and you can use pipes to search through to find specific commands. We
+will cover pipes in [episode 4](04-useful-tools.md).
 
 {% include links.md %}
