@@ -57,5 +57,31 @@ keypoints:
 
 ## `sed` and `awk` sub-languages
 
+### `sed` the UNIX stream editor
+
+The `sed` command is another handy tool in UNIX that can be used for;
+- Searching
+- Finding and replacing
+- Inserting/deleting
+
+It is mainly used to edit files without the need to go into a file and change it directly. The format is as follows;
+
+~~~
+sed 'opt/act/flag' file
+~~~
+{: .language-bash}
+
+### `awk` - a language within UNIX
+
+The `awk` command accesses a sub-language within UNIX. In a similar way that Python can be accessed through the 
+terminal, `awk` can be called within UNIX in a self-contained instance. It is a series of rules that take the form;
+
+~~~
+awk '(condition) {action}' file
+~~~
+{: .language-bash}
+
+This can be used for anything from printing to complex mathematical statements, and can be useful in bash scripting
+over multiple lines. We will cover bash scripting in more detail in [episode 6](06-bash-scripting.md).
 
 {% include links.md %}
