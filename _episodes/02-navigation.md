@@ -263,7 +263,7 @@ $ pwd
 {: .output}
 
 Note how the present working directory has changed from when we initially used the [`pwd` command](#the-pwd-command). 
-We recommend to use this everytime you change directory, like leaving breadcrumbs in the famous Hansel and Gretel
+We recommend to use this every time you change directory, like leaving breadcrumbs in the famous Hansel and Gretel
 story.
 
 Now let's say we want to go back to where we were. We can do two things. The first is type `cd` by itself, but this
