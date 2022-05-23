@@ -49,13 +49,77 @@ keypoints:
 
 ## File permissions
 
+All files have owners. There is yourself, the machine user, a group owner, which is a group on a machine and then
+others. 
+
+Once you are on a machine and have multiple people on the same machine, it is important to know that others can access
+your files. By default, you, the machine user and write and edit a file, but everyone else will have read-only 
+priveleges. Let's see what this looks like.
+
+~~~
+$ ls - lh hamlet.txt
+~~~
+{: .langauge-bash}
+
+~~~
+-rw-r--r--  1 user  staff  193K 11 Jan 12:00 hamlet.txt
+~~~
+{: .output}
+
+The `-h` flag puts our output into human-readable format, so the size of our file is expressed in kilobytes. The main
+area of interest for us though is on the left.
+
+The first `-` may sometimes be filled with `d`, standing for directory, however our interest area are the 9 characters
+to the right, which is divided into three sections, user, group and other
+
 `chmod`
+
+
+~~~
+OWNER  GROUP  OTHER
+r w x  r w x  r w x
+1 1 1  0 0 0  0 0 0
+  7      0      0
+  |______|______|
+         |
+        700
+~~~
+{: .code}
+
+> ## Who has what permissions?
+> 
+> Have a look at the different `rwx` permissions and numerical equivalents, and deduce who has what permissions, or who
+> has been granted, or had permissions retracted
+>
+> 1. `rwxrwxr--`
+> 2. `r--r--r--`
+> 3. `755`
+> 4. `740`
+> 5. `rwxrw-r--`
+> 6. `chmod u+x file`
+> 7. `chmod go-wx file`
+>
+> > ## Solution
+> >
+> > 1. **User** and **group** can *read*, *write*, *execute*. **Other** can only *read* the file.
+> > 2. **User**, **group** and **other** can only *read* the file
+> > 3. **User** can *read*, *write* and *execute* the file. **Group** and **other** can *read* and *write* the file.
+> > 4. **User** can *read*, *write* and *execute* the file, **Group** can *read* the file. **Other** cannot do anything.
+> > 5. **User** can *read*, *write* and *execute* the file. **Group** can *read* and write the file. **Other** can read
+> >    the file.
+> > 6. The **user** has been given permission to *execute* the file.
+> > 7. **Group** and **other** has has permissions to *read* and *write* the file retracted.
+> {: .solution}
+{: .challenge}
 
 ## Searching 
 
 `grep` + pipes
 
 ## `sed` and `awk` sub-languages
+
+We won't go into too much detail about these, as they are primarily used in bash scripting for advanced topics, but it
+is still useful to know that such tools exist and that they can be used effectively.
 
 ### `sed` the UNIX stream editor
 
