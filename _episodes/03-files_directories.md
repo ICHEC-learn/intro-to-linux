@@ -24,7 +24,7 @@ material gets lost.
 
 > ## Cloning a repository
 >
-> Online repositories contain written code in a directory. Github is a common place for people to uplaod their code in
+> Online repositories contain written code in a directory. Github is a common place for people to upload their code in
 > a safe place online, and so others can use it, comment and make changes. Many coding libraries are stored on GitHub,
 > and it is where we store the materials for this lesson.
 > 
@@ -188,8 +188,8 @@ Below you can find a few of the different flags that `rm` supports.
 | Flag | Action                                                                     |Danger Level|
 |------|----------------------------------------------------------------------------|------------|
 | `-i` | Requests confirmation before removing a file                               |    None    |
-| `-r` | Removes the file heirarchy, removing the directory and all files within it |   Medium   |
-| `-f` | Removes files without confirmation, regardless of fle permissions          |    High    |
+| `-r` | Removes the file hierarchy, removing the directory and all files within it |   Medium   |
+| `-f` | Removes files without confirmation, regardless of file permissions         |    High    |
 
 > ## Death command
 > 
