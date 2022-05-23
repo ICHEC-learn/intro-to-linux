@@ -19,6 +19,29 @@ keypoints:
 
 ## Creating and removing directories
 
+Before we start with creating new directories and doing other operations, we should find a place to work, otherwise
+material gets lost.
+
+> ## Cloning a repository
+>
+> Online repositories contain written code in a directory. Github is a common place for people to uplaod their code in
+> a safe place online, and so others can use it, comment and make changes. Many coding libraries are stored on GitHub,
+> and it is where we store the materials for this lesson.
+> 
+> We are going to get you to clone this repo to your computer. Using the `cd` command, navigate to a directory which is
+> easy for you to find (`Desktop`, or a `Courses` directory in `Documents`), and then type the following command in
+> your terminal.
+>
+> `git clone https://github.com/ICHEC-learn/intro-to-linux.git`
+>
+> This will clone the repository, which includes slides for the lesson into the directory that you are in. It may take
+> a minute. 
+> 
+> Then type `cd intro-to-linux/test` and you will arrive into that directory. Type `pwd` so you know where you are and
+> `ls` to confirm that there is a single file called `README.md`.
+>
+{: .challenge}
+
 `mkdir`
 
 `rmdir`
