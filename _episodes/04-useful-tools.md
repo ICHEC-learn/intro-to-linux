@@ -54,12 +54,12 @@ others.
 
 Once you are on a machine and have multiple people on the same machine, it is important to know that others can access
 your files. By default, you, the machine user and write and edit a file, but everyone else will have read-only 
-priveleges. Let's see what this looks like.
+privileges. Let's see what this looks like.
 
 ~~~
 $ ls - lh hamlet.txt
 ~~~
-{: .langauge-bash}
+{: .language-bash}
 
 ~~~
 -rw-r--r--  1 user  staff  193K 11 Jan 12:00 hamlet.txt
@@ -84,7 +84,7 @@ r w x  r w x  r w x
          |
         700
 ~~~
-{: .code}
+{: .output}
 
 > ## Who has what permissions?
 > 
