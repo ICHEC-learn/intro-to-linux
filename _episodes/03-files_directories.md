@@ -227,7 +227,7 @@ $ ls README
 ~~~
 README.txt
 ~~~
-{: .}
+{: .output}
 
 One must be careful when specifying the target file name, since `mv` will silently overwrite any existing file with the
 same name, which could lead to data loss. An additional option, `mv -i` (or `mv --interactive`), can be used to make 
