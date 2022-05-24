@@ -43,7 +43,8 @@ material gets lost.
 > a minute. 
 > 
 > Then type `cd intro-to-linux/test` and you will arrive into that directory. Type `pwd` so you know where you are and
-> `ls` to confirm that there is a single file called `README.md`.
+> `ls` to confirm that there are files called `README.md`, `hamlet.txt` and a directory, `wildcards/`. We will get to
+> these in later episodes.
 >
 {: .challenge}
 
