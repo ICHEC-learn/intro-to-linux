@@ -25,17 +25,99 @@ keypoints:
 
 ## Viewing files contents
 
-`echo`
+To view file contents, we need to first introduce a small command often used in bash scripting to post messages. It is
+effectively the `print` or `stdout` of UNIX, with a catchy name, `echo`
 
-`cat`
+Let's see how it works.
 
-`more`
+~~~
+$ echo "this message"
+~~~
+{: .language-bash}
 
-`less`
+~~~
+this message
+~~~
+{: .output}
 
-`head`
+Seems fairly useless here, but can be a very good way to debug a bash script, to find where the program fails. Now
+let's introduce the `>` sign, which here will put the message we want into a file. We'll do this a couple of times as
+it will lead into the next section.
 
-`tail`
+~~~
+$ echo "this correct message" > correct.txt
+$ echo "this is an incorrect message" > incorrect.txt
+~~~
+{: .language-bash}
+
+Now, how can we view it? We use a command, `cat`, short for concatenate to view the contents of the file.
+
+~~~
+$ cat correct.txt
+~~~
+{: .language-bash}
+
+~~~
+this correct message
+~~~
+{: .output}
+
+As you can see, it prints the output of the file to the terminal output. Most of the time though, files tend to be
+longer than a line. So, there is another command called `less` which opens a new window in which you can view the file.
+You can exit by pressing `Q`, and search for a word using `/word`. Let's try for `hamlet.txt`, which is several
+thousand lines long.
+
+~~~
+$ less hamlet.txt
+~~~
+{: .language-bash}
+
+The command `more` oddly enough, is not as useful, but also an option to view files. It combines the use of `less` with
+pressing `Q` to exit, and `cat` by printing to the screen.
+
+There are another couple of useful commands, `head` and `tail`, which by default print the first and last 10 lines of a
+file to the screen respectively. You can specify the number of lines by adding a `-n` flag.
+
+~~~
+$ head hamlet.txt
+~~~
+{: .language-bash}
+
+~~~
+THE TRAGEDY OF HAMLET, PRINCE OF DENMARK
+
+
+by William Shakespeare
+
+
+
+Dramatis Personae
+
+  Claudius, King of Denmark.
+~~~
+{: .output}
+
+~~~
+$ tail -n 5 hamlet.txt
+~~~
+{: .language-bash}
+
+~~~
+Exeunt marching; after the which a peal of ordnance
+                                                   are shot off.  
+
+
+THE END
+
+~~~
+{: .output}
+
+> ## Familiarisation with "viewing" commands
+>
+> Spend a few minutes familairising yourself with the commands, `head`, `tail`, `less`, `more`, `cat`. Which do you
+> feel works better in certain situations. Why?
+> 
+{: .challenge}
 
 ## Spot the difference
 
