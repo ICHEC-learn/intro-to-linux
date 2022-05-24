@@ -55,8 +55,8 @@ GNU Zip compression.
 Zipping a file with GNU Zip compression is fairly straightforward, specify the file you want to zip.
 
 ~~~
-touch new.txt
-gzip new.txt
+$ touch new.txt
+$ gzip new.txt
 ~~~
 {: .language-bash}
 
@@ -71,17 +71,80 @@ gunzip new.txt.gz
 This returns the file to its original state.
 
 For `.tar` archives, we need to implement some flags to create it. To create an archive, we need the create `c` and 
-file `f` flags, as well as specitfying a name for the tar archive.
+file `f` flags, as well as specitfying a name for the tar archive. You can also add the verbose flag (`v`), which lists
+the files that are being added.
 
 ~~~
-tar -cf archive.tar new.txt
+$ tar -cf archive.tar new.txt
 ~~~
-{: }
+{: .language-bash}
+
+If we check our directory, we can see that the original file, plus the tar archive itself are now present. Because this
+is now an archive, not a directory, we cannot check its contents. Luckily there is a flag (`t`) that we can use to view
+the archive contents. 
+
+~~~
+$ tar -tf archive.tar
+~~~
+{: .language-bash}
+
+~~~
+new.txt
+~~~
+{: .output}
+
+As you can see, it lists out the contents of the archive in the same way that `ls` lists out the content of a directory.
+
+Let us remove the original file, `new.txt` and then extract the contents of our `.tar` archive using the `x` flag.
+
+~~~
+$ rm new.txt
+$ tar -xf archive.tar
+~~~
+{: .language-bash}
+
+Running our `ls` command will confirm that `new.txt` has returned to the directory by extracting the file. You can
+remove `.tar` archives using the `rm` command.
 
 > ## `tar`-ing and `gzip`-ing a directory 
 >
-> Use `gzip`
+> Use `tar` plus its flags to create a `.tar` archive of the `wildcards/` directory. Check the contents of the archive.
+> Now zip the archive using `gzip`.
+> 
+> Finally, unzip and untar the archive.
+> 
+>
 > > ## Solution
+> >
+> > ~~~
+> > $ tar -cf my_archive.tar wildcards/
+> > $ tar -tf my_archive.tar
+> > ~~~
+> > {: .language-bash}
+> >
+> > ~~~
+> > wildcards/
+> > wildcards/01.txt
+> > wildcards/00.txt
+> > wildcards/02.txt
+> > wildcards/07.txt
+> > wildcards/06.txt
+> > wildcards/10.txt
+> > wildcards/11.c
+> > wildcards/04.c
+> > wildcards/08.txt
+> > wildcards/03.c
+> > wildcards/09.txt
+> > ~~~
+> > {: .output}
+> > 
+> > ~~~
+> > gzip my_archive.tar
+> > gunzip my_archive.tar.gz
+> > tar -xf my_archive.tar
+> > ~~~
+> > {: .language-bash}
+> > 
 > {: .solution}
 {: .challenge}
 
