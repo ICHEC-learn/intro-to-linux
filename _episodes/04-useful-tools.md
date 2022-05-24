@@ -43,6 +43,48 @@ keypoints:
 
 ## Zipped files and archives
 
+You may have encountered file type like `.zip`, `.gz` and `.tar` in your travels, and usually, operating systems such
+as Windows might need specified programs to open them. Fortunately in Linux, you can create, zip, unzip, tar and un-tar
+files like these.
+
+Zip files are a single file containing one or more compressed files. Tar archives on the other hand are used to package
+files together for backup or distribution purposes. They are sometimes called "tape archives". Many companies archive
+data on tape for long-term storage, which requires less floor space and energy. These archives can then be zipped with
+GNU Zip compression.
+
+Zipping a file with GNU Zip compression is fairly straightforward, specify the file you want to zip.
+
+~~~
+touch new.txt
+gzip new.txt
+~~~
+{: .language-bash}
+
+On running this command, we get no confirmation that the file has been created, but we can use `ls` to confirm that our
+new file `new.txt.gz` has been created. To unzip the file, we use `gunzip`
+
+~~~
+gunzip new.txt.gz
+~~~
+{: .language-bash}
+
+This returns the file to its original state.
+
+For `.tar` archives, we need to implement some flags to create it. To create an archive, we need the create `c` and 
+file `f` flags, as well as specitfying a name for the tar archive.
+
+~~~
+tar -cf archive.tar new.txt
+~~~
+{: }
+
+> ## `tar`-ing and `gzip`-ing a directory 
+>
+> Use `gzip`
+> > ## Solution
+> {: .solution}
+{: .challenge}
+
 ## Wildcards
 
 `* ? [] *?[]`
