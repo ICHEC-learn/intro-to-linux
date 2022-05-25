@@ -104,16 +104,18 @@ A very simple bash script is shown below. Recreate the text below in a file call
 
 echo "Hello from bash"
 ~~~
-{: .language}
+{: .language-bash}
 
 We can run this file in the terminal in two ways.
-1. Using the `bash` command
+1. Using the `bash` command;
+
 ~~~
 $ bash script.sh
 ~~~
 {: .language-bash}
 
 2. Changing permissions with `chmod`, and being able to run the file as a command 
+
 ~~~
 $ chmod u+x script.sh
 $ ./script.sh
@@ -148,7 +150,7 @@ We can extend this to work on files as well, which we are covering in the exerci
 > > 
 > > print(f'The value of pi is approximately {math.pi:.3f}.')
 > > ~~~
-> > {: .python}
+> > {: .language-python}
 > >
 > > ~~~
 > > $ python3 hello.py
