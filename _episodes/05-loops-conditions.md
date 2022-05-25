@@ -48,8 +48,7 @@ They are similar to wildcards and tab completion, using loops also reduces the
 amount of typing required (and hence reduces the number of typing mistakes).
 
 Suppose we have several hundred genome data files named `basilisk.dat`, `minotaur.dat`, and
-`unicorn.dat`.
-For this example, we'll use the `creatures` directory which only has three example files,
+`unicorn.dat`. For this example, we'll use the `loops/` directory which only has three example files,
 but the principles can be applied to many many more files at once.
 
 The structure of these files is the same: the common name, classification, and updated date are
@@ -61,8 +60,7 @@ $ head -n 5 basilisk.dat minotaur.dat unicorn.dat
 ```
 {: .language-bash}
 
-We would like to print out the classification for each species, which is given on the second
-line of each file.
+We would like to print out the classification for each species, which is given on the second line of each file.
 For each file, we would need to execute the command `head -n 2` and pipe this to `tail -n 1`.
 We’ll use a loop to solve this problem, but first let’s look at the general form of a loop:
 
@@ -134,8 +132,32 @@ it would work exactly the same way. *Don't do this.* Programs are only useful if
 so meaningless names (like `x`) or misleading names (like `temperature`) increase the odds that the program won't do
 what its readers think it does.
 
-## Conditionals
-
-`if`
+> ## Conditionals
+> 
+> Conditional statements are also an option in bash, as well as functions. Although useful at times, we won't be
+> spending too much time on them here as they are best saved for programming itself.
+>
+> The syntax for conditional statements in bash is as follows:
+>
+> ~~~
+> if [ condition ] ; then
+>   "do some stuff"
+> fi
+> ~~~
+> {: .language-bash}
+>
+> | Integer comparison | String Comparison | Meaning                  |
+> |--------------------|-------------------|--------------------------|
+> |       `-eq`        |     `=` / `==`    | equal to                 |
+> |       `-ne`        |        `!=`       | not equal to             |
+> |    `-lt` / `<`     |         `<`       | less than                |
+> |    `-le` / `<=`    |        `<=`       | less than or equal to    |
+> |     `-gt` / `>`    |         `>`       | greater than             |
+> |    `-ge` / `>=`    |        `>=`       | greater than or equal to |
+>
+> Depending on whether you are dealing with a string or integer, the following comparison may be useful for you.
+> `["$a" -lt "$b"]` or `(("$a" < "$b"))`
+> 
+{: .callout}
 
 {% include links.md %}
