@@ -312,19 +312,98 @@ remove `.tar` archives using the `rm` command.
 
 ## Wildcards
 
-Now we will get to use the `wildcards/` directory we were referencing in the previous exercise
+Wildcards are one of the most useful tools in Linux and can be used to substitute any character(s) in a command.
 
-`* ? [] *?[]`
+Let's look into their uses. Ensure that you are in the `test` directory, and lets create a few files 
 
+~~~
+touch 001.txt 002.txt 003.c 004.py 101.txt 211.py
+~~~
+{: .langauge-bash}
 
+Let's use the most useful one first, `*`, which implies **everything**. If we type `ls *`, it will not be very useful
+as it will list all the contents of a directory, which `ls` does anyway. Let's see what happens if we select only
+certain file types, by using `*` followed immediately with `.txt` with no whitespace.
 
+~~~
+$ ls *.txt
+~~~
+{: .language-bash}
 
+~~~
+001.txt		002.txt		correct.txt	hamlet.txt	incorrect.txt
+~~~
+{: .output}
 
+We only get the files with that extension. It can work in reverse as well, we can only select the files that start with
+`0`.
 
+~~~
+$ ls 0*
+~~~
+{: .language-bash}
 
+~~~
+001.txt	002.txt	003.txt	004.py
+~~~
+{: .output}
 
+Now, we can see that all the files starting with `0` have been added, regardless of the extension.
 
+We move now onto the `?` wildcard, which will replace a single character rather than all of them.
 
+~~~
+ls 00?.txt
+~~~
+{: .language-bash}
+
+~~~
+001.txt	002.txt	003.txt
+~~~
+{: .output}
+
+In comparison to our previous command, only the three files have been seelcted. We can use the `?` more than once in a
+command, as shown below, as our `101.txt` file can also be selected.
+
+~~~
+ls ?0?.txt
+~~~
+{: .language-bash}
+
+~~~
+001.txt	002.txt	101.txt
+~~~
+{: .output}
+
+Our final wildcard is `[]`, which signifies a collection of possible values, which is more specific than `?`. We can
+specify the exact numbers we want to display. Let's select the odd numbers.
+
+~~~
+ls 00[13].txt
+~~~
+{: .language-bash}
+
+~~~
+001.txt	003.txt
+~~~
+{: .output}
+
+> ## Danger with wildcards
+>
+> These are incredibly useful tools and having a good mastery of these is crucial, particularly with `*` as it can be 
+> very easy to remove a bunch of files by accident!
+>
+{: .callout} 
+
+> ## Practice using wildcards
+>
+> Now we will get to use the `wildcards/` directory we were referencing in the previous exercise. Practice using
+> the different wildcards to remove, or list out the different files. Remember you can use `touch` to create a new
+> empty file.
+> 
+> Try combining two or more wildcards (`*`, `[]`, `?`) in the same command. Is the output what you would expect?
+>
+{: .challenge}
 
 ## File permissions
 
