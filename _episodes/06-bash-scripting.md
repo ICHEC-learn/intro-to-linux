@@ -47,8 +47,6 @@ editing text are there for you to use.
 It can be tricky for beginners to get used to the different modes and shortcuts, but once gotten used to, it can save a
 lot of time and effort.
 
-
-
 > ## Getting used to text editors
 >
 > Using either `vim` or `nano`, get used to working with some of the commands to write text, open, close and save the
@@ -93,5 +91,90 @@ lot of time and effort.
 {: .challenge}
 
 ## Creating a bash script
+
+Now that you have gotten used to a text editor, we can start doing some bash scripting. These scripts typically have
+the extension `.sh`.
+
+A very simple bash script is shown below. Recreate the text below in a file called `script.sh`
+
+~~~
+#!/bin/bash
+
+# Comments are denoted with a hashtag, and will not be shown in the output
+
+echo "Hello from bash"
+~~~
+{: .language}
+
+We can run this file in the terminal in two ways.
+1. Using the `bash` command
+~~~
+$ bash script.sh
+~~~
+{: .language-bash}
+
+2. Changing permissions with `chmod`, and being able to run the file as a command 
+~~~
+$ chmod u+x script.sh
+$ ./script.sh
+~~~
+{: .language-bash}
+
+Doing it this way can mean that depending on your shell, the file name may change to green. A green file usually is an
+indication that the file is executable and can be run.
+
+Once the script file has been run, whatever you type is the same as typing in a terminal, but allows you to save
+complex sequences of commands.
+
+We can extend this to work on files as well, which we are covering in the exercise below
+
+> ## Running a coded file 
+>
+> In your chosen language, create a file `.c`, `.cpp`, `.py` that prints a simple message or does some arithmetic.
+> You will need either anaconda or a suitable compiler to get this working.
+> 
+> Run the file as normal in a terminal (NB: For C, C++ remember to run the output file rather than the `.c`, `.cpp`
+> file)
+>
+> > ## Solution
+> >
+> > Here is a solution for Python 3. This file prints out a string and utilises the `math` library
+> > 
+> > `hello.py`
+> > ~~~
+> > import math 
+> >
+> > print("Hello")
+> > 
+> > print(f'The value of pi is approximately {math.pi:.3f}.')
+> > ~~~
+> > {: .python}
+> >
+> > ~~~
+> > $ python3 hello.py
+> > ~~~
+> > {: .language-bash}
+> >
+> > ~~~
+> > Hello
+> > The value of pi is approximately 3.142.
+> > ~~~
+> > {: .output}
+> >
+> > `script.sh`
+> > ~~~
+> > #!/bin/bash
+> > 
+> > echo "Running python3 file"
+> >
+> > # Running python file
+> > python3 hello.py
+> > 
+> > echo "Run successful"
+> > ~~~
+> > {: .language-bash}
+> >
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}
