@@ -45,10 +45,21 @@ let's introduce the `>` sign, which here will put the message we want into a fil
 it will lead into the next section.
 
 ~~~
-$ echo "this correct message" > correct.txt
-$ echo "this is an incorrect message" > incorrect.txt
+$ echo "This message is correct" > correct.txt
+$ echo "This message is incorrect" > incorrect.txt
 ~~~
 {: .language-bash}
+
+> ## Getting stuck
+>
+> Now that we have introduced file editing and `echo`, you may encounter times when commands do not seem to work. Check
+> your prompt.
+> 
+> If it has changed from `$` or `%` to `>` and running commands doesn't seem to work anymore, it is likely caused by an
+> unclosed quote `"` or `'`. The simple keyboard fix for this is `Ctrl+C` which will cause the shell to exit out of the
+> command that you are typing.
+> 
+{: .callout}
 
 Now, how can we view it? We use a command, `cat`, short for concatenate to view the contents of the file.
 
@@ -62,7 +73,10 @@ this correct message
 ~~~
 {: .output}
 
-As you can see, it prints the output of the file to the terminal output. Most of the time though, files tend to be
+As you can see, it prints the output of the file to the terminal output. On Linux systems themselves, you can type
+`tac`, which will do the reverse.
+
+Most of the time though, files tend to be
 longer than a line. So, there is another command called `less` which opens a new window in which you can view the file.
 You can exit by pressing `Q`, and search for a word using `/word`. Let's try for `hamlet.txt`, which is several
 thousand lines long.
@@ -119,9 +133,75 @@ THE END
 > 
 {: .challenge}
 
-## Spot the difference
+## Spot the difference with `diff`
 
-`diff`
+We now move onto analysing the difference between files with the `diff` command. This compares one file to another to
+ensure they are the same.
+
+When we type the following command to compare our two files.
+
+~~~
+diff correct.txt incorrect.txt
+~~~
+{: .language-bash}
+
+The `<` corresponds to the first file entered, in this case `correct.txt`, and the `>` corresponds to the second file.
+It will produce the following output.
+
+~~~
+1c1
+< This message is correct
+---
+> This message is incorrect
+~~~
+{: .output}
+
+The `1c1` highlights the lines that are different and what needs changing. This can be very helpful if you are looking
+at two very similar files.
+
+Let us change our files `incorrect.txt` and `correct.txt` with `echo` and see the resulting difference with `diff`.
+
+We can press `Enter` before closing our quotes to spread the message onto the next line. You will notice something is
+different when the prompt changes.
+
+~~~
+$ echo "This message is correct" > incorrect.txt
+$ echo "This message is correct
+> but not as correct as this." > correct.txt
+~~~
+{: .language-bash}
+
+Now we will use `diff` again to see what has changed.
+
+~~~
+diff correct.txt incorrect.txt
+~~~
+{: .language-bash}
+
+~~~
+2d1
+< but not as correct as this.
+~~~
+{: .output}
+
+We see that the output `2d1` is telling us to delete a the second line in our file `correct.txt` to make it the same as
+`incorrect.txt`.
+
+So having the order right is important. The best way to describe `diff` is **How can I change file 1 to make it the** 
+**same as file 2?**
+
+If we reverse the command, it will tell us to add a line to `incorrect.txt` to make it the same as `correct.txt`.
+
+~~~
+diff incorrect.txt correct.txt
+~~~
+{: .language-bash}
+
+~~~
+1a2
+> but not as correct as this.
+~~~
+{: .output}
 
 ## Zipped files and archives
 
@@ -235,6 +315,16 @@ remove `.tar` archives using the `rm` command.
 Now we will get to use the `wildcards/` directory we were referencing in the previous exercise
 
 `* ? [] *?[]`
+
+
+
+
+
+
+
+
+
+
 
 ## File permissions
 
