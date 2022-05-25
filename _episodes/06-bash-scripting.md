@@ -176,6 +176,14 @@ We can extend this to work on files as well, which we are covering in the exerci
 > > ~~~
 > > {: .language-bash}
 > >
+> > ~~~
+> > Running python3 file\n
+> > Hello
+> > The value of pi is approximately 3.142.
+> > Run successful
+> > ~~~
+> > {: .language-bash}
+> > 
 > {: .solution}
 {: .challenge}
 
