@@ -141,7 +141,7 @@ ensure they are the same.
 When we type the following command to compare our two files.
 
 ~~~
-diff correct.txt incorrect.txt
+$ diff correct.txt incorrect.txt
 ~~~
 {: .language-bash}
 
@@ -174,7 +174,7 @@ $ echo "This message is correct
 Now we will use `diff` again to see what has changed.
 
 ~~~
-diff correct.txt incorrect.txt
+$ diff correct.txt incorrect.txt
 ~~~
 {: .language-bash}
 
@@ -193,7 +193,7 @@ So having the order right is important. The best way to describe `diff` is **How
 If we reverse the command, it will tell us to add a line to `incorrect.txt` to make it the same as `correct.txt`.
 
 ~~~
-diff incorrect.txt correct.txt
+$ diff incorrect.txt correct.txt
 ~~~
 {: .language-bash}
 
@@ -226,7 +226,7 @@ On running this command, we get no confirmation that the file has been created, 
 new file `new.txt.gz` has been created. To unzip the file, we use `gunzip`
 
 ~~~
-gunzip new.txt.gz
+$ gunzip new.txt.gz
 ~~~
 {: .language-bash}
 
@@ -314,12 +314,12 @@ remove `.tar` archives using the `rm` command.
 
 Wildcards are one of the most useful tools in Linux and can be used to substitute any character(s) in a command.
 
-Let's look into their uses. Ensure that you are in the `test` directory, and lets create a few files 
+Let's look into their uses. Ensure that you are in the `test` directory, and lets create a few files.
 
 ~~~
-touch 001.txt 002.txt 003.c 004.py 101.txt 211.py
+$ touch 001.txt 002.txt 003.c 004.py 101.txt 211.py
 ~~~
-{: .langauge-bash}
+{: .language-bash}
 
 Let's use the most useful one first, `*`, which implies **everything**. If we type `ls *`, it will not be very useful
 as it will list all the contents of a directory, which `ls` does anyway. Let's see what happens if we select only
@@ -353,7 +353,7 @@ Now, we can see that all the files starting with `0` have been added, regardless
 We move now onto the `?` wildcard, which will replace a single character rather than all of them.
 
 ~~~
-ls 00?.txt
+$ ls 00?.txt
 ~~~
 {: .language-bash}
 
@@ -366,7 +366,7 @@ In comparison to our previous command, only the three files have been seelcted. 
 command, as shown below, as our `101.txt` file can also be selected.
 
 ~~~
-ls ?0?.txt
+$ ls ?0?.txt
 ~~~
 {: .language-bash}
 
@@ -379,7 +379,7 @@ Our final wildcard is `[]`, which signifies a collection of possible values, whi
 specify the exact numbers we want to display. Let's select the odd numbers.
 
 ~~~
-ls 00[13].txt
+$ ls 00[13].txt
 ~~~
 {: .language-bash}
 
@@ -552,7 +552,57 @@ $ chmod 750 my_script.sh
 
 ## Searching 
 
-`grep` + pipes
+We will now look into one of the most useful tools in Linux. There is possibly enough material on this command for a
+whole episode, but we will keep it simple here.
+
+The command for searching is `grep`, which stands for **globally search for a regular expression**. In English, it is
+used to search for a string of characters in a specified file.
+
+Let's use `grep` to search for all lines in `hamlet.txt` that contain the word "hamlet".
+
+~~~
+$ grep 'hamlet' hamlet.txt
+~~~
+{: .language-bash}
+
+You will notice running this that nothing has happened. We therefore need to use a case insensitive flag (`i`) to get
+this working, we will also add in the display line occurrence flag (`n`). Case sensitivity is important in `grep`
+
+~~~
+$ grep -i "hamlet" hamlet.txt
+~~~
+{: .language-bash}
+
+As you can see, it produces a long output. But where grep really comes in useful is with pipes.
+
+Pipes work on the concept that it is better to combine smaller commands into a more powerful and useful one. They can
+also help remove unnecessary temporary files, and sends the output of one command to another. The syntax is;
+
+`command_1 | command_2 | ... | command_n`
+
+Let's work on this by piping the output of our previous command to `less`.
+
+~~~
+$ grep -i "hamlet" hamlet.txt | less
+~~~
+{: .language-bash}
+
+On the output we can see that our `less` window has opened up. Remember you can type `Q` to exit. 
+
+> # Piping Hamlet to a file
+>
+> Use `grep` and `|` to choose a word, "Hamlet", "Ghost", "Queen" or another of your choosing and pipe it to a new
+> file.
+>
+> > ## Solution
+> >
+> > ~~~
+> > $ grep -n "Hamlet" | hamlet_occurrence.txt
+> > ~~~ 
+> > {: .language-bash}
+> >
+> {: .solution}
+{: .challenge}
 
 ## `sed` and `awk` sub-languages
 
