@@ -6,29 +6,133 @@ questions:
 - "How can I perform the same actions on many different files?"
 objectives:
 - "Write a loop that applies one or more commands separately to each file in a set of files."
-- "Trace the values taken on by a loop variable during execution of the loop."
 - "Explain the difference between a variable's name and its value."
-- "Explain why spaces and some punctuation characters shouldn't be used in file names."
-- "Demonstrate how to see what commands have recently been executed."
-- "Re-run recently executed commands without retyping them."
 keypoints:
 - "A `for` loop repeats commands once for every thing in a list."
 - "Every `for` loop needs a variable to refer to the thing it is currently operating on."
 - "Use `$name` to expand a variable (i.e., get its value). `${name}` can also be used."
 - "Do not use spaces, quotes, or wildcard characters such as '*' or '?' in filenames, as it complicates variable expansion."
 - "Give files consistent names that are easy to match with wildcard patterns to make it easy to select them for looping."
-- "Use the up-arrow key to scroll up through previous commands to edit and repeat them."
-- "Use <kbd>Ctrl</kbd>+<kbd>R</kbd> to search through the previously entered commands."
-- "Use `history` to display recent commands, and `![number]` to repeat a command by number."
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>
 
 ## Variables in Linux
 
+When using variables it is also possible to put the names into curly braces to clearly delimit the variable
+name: `$filename` is equivalent to `${filename}`, but is different from `${file}name`. You may find this notation in other 
+people's programs.
+
+They are nothing to be concerned about, but are mainly used in for loops which we will cover below and bash scripting.
+
+There are some variables that already exist in bash, like `env`, or `HOME`. Some need the $ sign before it (such as
+`$HOME`).
+
+To access the contents of the variable `HOME` we can use `echo`.
+
+~~~
+$ echo $HOME
+~~~
+{: .language-bash}
+
+~~~
+/Users/johnsmith
+~~~
+{: .output}
+
 ## Loops
 
-`for`, `do`
+**Loops** are a programming construct which allow us to repeat a command or set of commands
+for each item in a list. As such they are key to productivity improvements through automation.
+They are similar to wildcards and tab completion, using loops also reduces the
+amount of typing required (and hence reduces the number of typing mistakes).
+
+Suppose we have several hundred genome data files named `basilisk.dat`, `minotaur.dat`, and
+`unicorn.dat`.
+For this example, we'll use the `creatures` directory which only has three example files,
+but the principles can be applied to many many more files at once.
+
+The structure of these files is the same: the common name, classification, and updated date are
+presented on the first three lines, with DNA sequences on the following lines.
+Let's look at the files:
+
+```
+$ head -n 5 basilisk.dat minotaur.dat unicorn.dat
+```
+{: .language-bash}
+
+We would like to print out the classification for each species, which is given on the second
+line of each file.
+For each file, we would need to execute the command `head -n 2` and pipe this to `tail -n 1`.
+We’ll use a loop to solve this problem, but first let’s look at the general form of a loop:
+
+```
+for thing in list_of_things
+do
+    operation_using $thing    # Indentation within the loop is not required, but aids legibility
+done
+```
+{: .language-bash}
+
+and we can apply this to our example like this:
+
+```
+$ for filename in basilisk.dat minotaur.dat unicorn.dat
+> do
+>     head -n 2 $filename | tail -n 1
+> done
+```
+{: .language-bash}
+
+```
+CLASSIFICATION: basiliscus vulgaris
+CLASSIFICATION: bos hominus
+CLASSIFICATION: equus monoceros
+```
+{: .output}
+
+
+> ## Follow the Prompt
+>
+> The shell prompt changes from `$` to `>` and back again as we were
+> typing in our loop. The second prompt, `>`, is different to remind
+> us that we haven't finished typing a complete command yet. A semicolon, `;`,
+> can be used to separate two commands written on a single line.
+{: .callout}
+
+In this example, the list is three filenames: `basilisk.dat`, `minotaur.dat`, and `unicorn.dat`.
+Each time the loop iterates, it will assign a file name to the variable `filename` and run the `head` command.
+The first time through the loop, `$filename` is `basilisk.dat`. The interpreter runs the command `head` on 
+`basilisk.dat` and pipes the first two lines to the `tail` command, which then prints the second line of 
+`basilisk.dat`. For the second iteration, `$filename` becomes `minotaur.dat`. This time, the shell runs `head` on 
+`minotaur.dat` and pipes the first two lines to the `tail` command, which then prints the second line of 
+`minotaur.dat`. For the third iteration, `$filename` becomes `unicorn.dat`, so the shell runs the `head` command on
+that file, and `tail` on the output of that. Since the list was only three items, the shell exits the `for` loop.
+
+We have called the variable in this loop `filename` in order to make its purpose clearer to human readers.
+The shell itself doesn't care what the variable is called. If we wrote this loop as:
+
+~~~
+$ for x in basilisk.dat minotaur.dat unicorn.dat
+> do
+>     head -n 2 $x | tail -n 1
+> done
+~~~
+{: .language-bash}
+
+or:
+
+~~~
+$ for temperature in basilisk.dat minotaur.dat unicorn.dat
+> do
+>     head -n 2 $temperature | tail -n 1
+> done
+~~~
+{: .language-bash}
+
+it would work exactly the same way. *Don't do this.* Programs are only useful if people can understand them,
+so meaningless names (like `x`) or misleading names (like `temperature`) increase the odds that the program won't do
+what its readers think it does.
 
 ## Conditionals
 
