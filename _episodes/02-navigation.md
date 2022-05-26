@@ -375,7 +375,7 @@ $ ls --help
 ~~~
 {: .language-bash}
 
-#### The `man` command
+### The `man` command
 
 The other way to learn about `ls` is to type
 ~~~
