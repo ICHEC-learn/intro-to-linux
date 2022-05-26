@@ -284,6 +284,8 @@ Let's finish this off with a bigger challenge, creating a directory hierarchy.
 > 8. Copy `script.sh` to the `02/subdir` folder, then move into it to confirm it is there
 > 9. Remove this copied file, try using the `-i` flag
 >
+> <p align="center"><img src="../fig/dir_hierarchy.png" width="60%"/></p>
+>
 > Use `pwd` and `ls` where needed so you can confirm where you are at any time
 >
 > > ## Solution
