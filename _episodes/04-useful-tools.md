@@ -589,7 +589,7 @@ $ grep -i "hamlet" hamlet.txt | less
 
 On the output we can see that our `less` window has opened up. Remember you can type `Q` to exit. 
 
-> # Piping Hamlet to a file
+> ## Piping Hamlet to a file
 >
 > Use `grep` and `|` to choose a word, "Hamlet", "Ghost", "Queen" or another of your choosing and pipe it to a new
 > file.
