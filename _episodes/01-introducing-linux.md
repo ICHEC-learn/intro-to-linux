@@ -81,9 +81,9 @@ developers. Linux however, is primarily command line based, with versions having
 >
 {: .challenge}
 
-## The Shell
+## The Shell vs the Kernel
 
-The shell is a program where users can type commands, and is accessed through a terminal. With the shell, it's possible
+The **shell** is a program where users can type commands, and is accessed through a terminal. With the shell, it's possible
 to invoke complicated programs like climate modeling software or simple commands that create an empty directory with
 only one line of code.
 
@@ -97,6 +97,15 @@ learn a few commands like new vocabulary in a language you're studying.
 
 However, unlike a spoken language, a small number of "words" (i.e. commands) gets you a long way, and we'll cover
 those essential few today.
+
+The **kernel** is a computer program that is at the hear of the computer operating system. We as the prgorammers don't
+interact with it directly.
+
+When you execute a command in the shell, it searches for the program, and then requests the kernel to execute the
+program. At the end of the process, the shell returns to the prompt, and awaits further commands.
+
+<p align="center"><img src="../fig/kernel.png" width="40%"/></p>
+
 
 ## The command line
 
