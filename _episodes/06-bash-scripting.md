@@ -1,7 +1,7 @@
 ---
 title: "Bash Scripting"
-teaching: 10
-exercises: 0
+teaching: 5
+exercises: 20
 questions:
 - "What is bash scripting"
 - "What are the different text editors?"

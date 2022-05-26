@@ -1,7 +1,7 @@
 ---
 title: "Introducing Linux and the Command Line"
 teaching: 10
-exercises: 0
+exercises: 5
 questions:
 - "What is Linux and Unix?"
 - "What is the command line and why is it used?"

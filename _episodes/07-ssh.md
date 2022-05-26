@@ -1,7 +1,7 @@
 ---
 title: "ssh Keys"
-teaching: 10
-exercises: 0
+teaching: 5
+exercises: 10
 questions:
 - "What is ssh and the secure shell?"
 - "How does an ssh key work?"

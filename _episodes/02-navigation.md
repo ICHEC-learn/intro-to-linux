@@ -1,7 +1,7 @@
 ---
 title: "Navigating through files and directories"
-teaching: 10
-exercises: 0
+teaching: 20
+exercises: 10
 questions:
 - "What is the directory tree?"
 - "What is a path?"

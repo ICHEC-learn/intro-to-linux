@@ -1,7 +1,7 @@
 ---
 title: "Useful Tools"
-teaching: 10
-exercises: 0
+teaching: 25
+exercises: 15
 questions:
 - "How can I view file contents without needing a text editor"
 - "How can I see the differences between two files?"
