@@ -64,11 +64,8 @@ directory. For supercomputers, this is restricted.
 
 Let us look at a simple directory structure. This is an important concept to grasp as you move through a file system.
 
-!!!!!!!!!!!!!!!!!!
-!!INSERT DIAGRAM!!
-!!!!!!!!!!!!!!!!!!
+<p align="center"><img src="../fig/tree_short.png" width="10%"/></p>
 
-HOME - USERS - JOHN - DOCUMENTS - myfile
 
 Each of the boxes refers to a directory, and the tree ends at `myfile`. You can see how the idea of a path arises, so
 lets add some slashes in here to turn this directory structure into a path.
@@ -96,6 +93,8 @@ that later, let's look into our first few exercises.
 > 
 > 1. The absolute path to `text.txt`
 > 2. The relative path to `text.txt` if you are in the `user1` directory.
+> 
+> <p align="center"><img src="../fig/tree-exercise.png" width="30%"/></p>
 > 
 > > ## Solution
 > >
