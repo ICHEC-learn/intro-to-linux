@@ -55,10 +55,7 @@ authenticates the identity of your computer.
 When you generate an SSH key, you end up creating what is known as an SSH key-pair. It creates two different ones, one
 being a public key, the other is a private key. 
 
-We will come onto generating SSH keys later, 
-
-###
-###
+We will come onto generating SSH keys shortly.
 
 ## Public and Private keys
 
