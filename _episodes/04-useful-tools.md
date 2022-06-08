@@ -14,16 +14,16 @@ objectives:
 - "Use wildcards to perform actions on a selection of files"
 keypoints:
 - "`echo` is the print statement in UNIX."
-- "If pressing `Enter` gives you e.g. `>`, this indicates you are writing a string in `echo`. You can exit it by"
-  "pressing `Ctrl+C` to return to the prompt."
+- "If pressing `Enter` gives you e.g. `>`, this indicates you are writing a string in `echo`. You can exit it by
+  pressing `Ctrl+C` to return to the prompt."
 - "`command > [file]` redirects a command’s output to a file (overwriting any existing content)."
 - "`command >> [file]` appends a command’s output to a file."
 - "The different viewing commands `more`, `less` and `cat` have different uses depending on the size of your file."
 - "`cat` prints a file directly to the screen, `less` opens a new window."
 - "The `*` wildcard matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`."
 - "The `?` wildcard matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`."
-- "The `[]` wildcard matches any single character called in the bracket that is present in the filename, so"
-  "`[12].txt` matches `1.txt`, `2.txt`, but no other number or character."
+- "The `[]` wildcard matches any single character called in the bracket that is present in the filename, so 
+  `[12].txt` matches `1.txt`, `2.txt`, but no other number or character."
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>

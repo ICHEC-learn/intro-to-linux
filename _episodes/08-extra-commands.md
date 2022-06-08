@@ -15,8 +15,8 @@ objectives:
 - "Understand the benefits of searching and using pipes"
 keypoints:
 - "`grep` selects lines in files that match patterns. It can be combined with pipes `|` to be even more useful."
-- "`.tar` archives are very useful ways of converting a while folder into a single file. They are often used in data"
-  "sharing."
+- "`.tar` archives are very useful ways of converting a while folder into a single file. They are often used in data
+  sharing."
 - "The creation of `.tar` archives requires the use of flags to create and untar them."
 - "The `-cf` tar flags create an archive with a specified name. The `-xf` flag is used to extract the archive contents."
 ---
