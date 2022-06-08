@@ -4,21 +4,26 @@ teaching: 25
 exercises: 15
 questions:
 - "How can I view file contents without needing a text editor"
-- "How can I see the differences between two files?"
-- "How can I zip files?"
-- "What are `.tar` archives?"
 - "How do wildcards work?"
-- "How and why should I change permissions on a file?"
 - "How can I search for a string in a file"
 - "What are pipes and how do they work?"
 - "What are sed and awk?"
 objectives:
 - "Use the `cat`, `less` and `more` commands to view file contents"
-- "Write content to a file using `echo` and observe differences between files using `diff`"
-- "Create and work with `.zip` files and `.tar` archives"
+- "Write content to a file using `echo`"
+- "Use wildcards to perform actions on a selection of files"
 keypoints:
-- "Point 1"
-- "Point 2"
+- "`echo` is the print statement in UNIX."
+- "If pressing `Enter` gives you e.g. `>`, this indicates you are writing a string in `echo`. You can exit it by"
+  "pressing `Ctrl+C` to return to the prompt."
+- "`command > [file]` redirects a command’s output to a file (overwriting any existing content)."
+- "`command >> [file]` appends a command’s output to a file."
+- "The different viewing commands `more`, `less` and `cat` have different uses depending on the size of your file."
+- "`cat` prints a file directly to the screen, `less` opens a new window."
+- "The `*` wildcard matches zero or more characters in a filename, so `*.txt` matches all files ending in `.txt`."
+- "The `?` wildcard matches any single character in a filename, so `?.txt` matches `a.txt` but not `any.txt`."
+- "The `[]` wildcard matches any single character called in the bracket that is present in the filename, so"
+  "`[12].txt` matches `1.txt`, `2.txt`, but no other number or character."
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>
@@ -26,7 +31,7 @@ keypoints:
 ## Viewing files contents
 
 To view file contents, we need to first introduce a small command often used in bash scripting to post messages. It is
-effectively the `print` or `stdout` of UNIX, with a catchy name, `echo`
+effectively the `print` or `stdout` of UNIX, with a catchy name, `echo`.
 
 Let's see how it works.
 
@@ -49,6 +54,9 @@ $ echo "This message is correct" > correct.txt
 $ echo "This message is incorrect" > incorrect.txt
 ~~~
 {: .language-bash}
+
+Using a single `>` overwrites any contents of the file, which is fine for empty files, but not if there is already
+material in the file. You can use `>>` instead to append to a file.
 
 > ## Getting stuck
 >
