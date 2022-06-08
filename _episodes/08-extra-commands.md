@@ -1,22 +1,24 @@
 ---
-title: "ssh Keys"
+title: "Extra commands"
 teaching: 5
 exercises: 10
 questions:
-- "What is ssh and the secure shell?"
-- "How does an ssh key work?"
-- "What is the difference between a public and private key"
-- "Why do I need an ssh key?"
-- "How do I create an ssh key on different operating systems"
-- "How do I log into a supercomputer?"
+- "How can I search for a string in a file"
+- "What are pipes and how do they work?"
+- "What are sed and awk?" 
+- "How can I see the differences between two files?"
+- "How can I zip files?"
+- "What are `.tar` archives?"
 objectives:
-- "Introduce the concepts of ssh keys and why they are needed"
-- "Generate an ssh key-pair for different operating systems"
+- "Be able to observe differences between files using `diff`"
+- "Create and work with `.zip` files and `.tar` archives"
+- "Understand the benefits of searching and using pipes"
 keypoints:
-- "ssh key-pairs are needed to log into most supercomputing systems"
-- "To log into ICHEC's cluster, an ssh key-pair is necessary"
-- "You only need one ssh key-pair generated per device"
-- "ssh keys are typically stored in the user's home directory"
+- "`grep` selects lines in files that match patterns. It can be combined with pipes `|` to be even more useful."
+- "`.tar` archives are very useful ways of converting a while folder into a single file. They are often used in data"
+  "sharing."
+- "The creation of `.tar` archives requires the use of flags to create and untar them."
+- "The `-cf` tar flags create an archive with a specified name. The `-xf` flag is used to extract the archive contents."
 ---
 
 <p align="center"><img src="../fig/ICHEC_Logo.jpg" width="40%"/></p>
@@ -74,38 +76,6 @@ On the output we can see that our `less` window has opened up. Remember you can 
 > >
 > {: .solution}
 {: .challenge}
-
-## `sed` and `awk` sub-languages
-
-We won't go into too much detail about these, as they are primarily used in bash scripting for advanced topics, but it
-is still useful to know that such tools exist and that they can be used effectively.
-
-### `sed` the UNIX stream editor
-
-The `sed` command is another handy tool in UNIX that can be used for;
-- Searching
-- Finding and replacing
-- Inserting/deleting
-
-It is mainly used to edit files without the need to go into a file and change it directly. The format is as follows;
-
-~~~
-sed 'opt/act/flag' file
-~~~
-{: .language-bash}
-
-### `awk` - a language within UNIX
-
-The `awk` command accesses a sub-language within UNIX. In a similar way that Python can be accessed through the 
-terminal, `awk` can be called within UNIX in a self-contained instance. It is a series of rules that take the form;
-
-~~~
-awk '(condition) {action}' file
-~~~
-{: .language-bash}
-
-This can be used for anything from printing to complex mathematical statements, and can be useful in bash scripting
-over multiple lines. We will cover bash scripting in more detail in [episode 6](06-bash-scripting.md).
 
 ## Spot the difference with `diff`
 
@@ -284,5 +254,36 @@ remove `.tar` archives using the `rm` command.
 > {: .solution}
 {: .challenge}
 
+## `sed` and `awk` sub-languages
+
+We won't go into too much detail about these, as they are primarily used in bash scripting for advanced topics, but it
+is still useful to know that such tools exist and that they can be used effectively.
+
+### `sed` the UNIX stream editor
+
+The `sed` command is another handy tool in UNIX that can be used for;
+- Searching
+- Finding and replacing
+- Inserting/deleting
+
+It is mainly used to edit files without the need to go into a file and change it directly. The format is as follows;
+
+~~~
+sed 'opt/act/flag' file
+~~~
+{: .language-bash}
+
+### `awk` - a language within UNIX
+
+The `awk` command accesses a sub-language within UNIX. In a similar way that Python can be accessed through the 
+terminal, `awk` can be called within UNIX in a self-contained instance. It is a series of rules that take the form;
+
+~~~
+awk '(condition) {action}' file
+~~~
+{: .language-bash}
+
+This can be used for anything from printing to complex mathematical statements, and can be useful in bash scripting
+over multiple lines.
 
 {% include links.md %}
